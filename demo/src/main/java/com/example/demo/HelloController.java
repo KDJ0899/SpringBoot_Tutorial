@@ -11,7 +11,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class HelloController {
 
 	@RequestMapping("/")
-	public void Hello(HttpServletResponse response) throws IOException{
+	public String Hello(HttpServletResponse response) throws IOException{
 		response.getWriter().print("Hello my name is Kim DongJin");
+		
+		return "welcome";
 	}
+	
+	@RequestMapping("/welcome")
+	public String welcome() {
+		return "welcome";
+		}
 }
